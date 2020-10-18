@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AddContact from './components/AddContact';
 import ContactList from './components/ContactList';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header"></header>
+			<AddContact setContacts={setContacts} />
 			<ContactList contacts={contacts} />
 		</div>
 	);
