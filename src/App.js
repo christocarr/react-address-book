@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ContactList from './components/ContactList';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
-  );
+	//set state to array which will update with objects
+	const [contacts, setContacts] = useState([
+		{
+			name: 'name',
+			address: {
+				addressLineOne: 'Address Line One',
+				addressLineTwo: 'Address Line Two',
+				city: 'City',
+				postCode: 'postcode',
+			},
+			telephone: '077878787',
+			email: 'email@email.com',
+		},
+	]);
+
+	return (
+		<div className="App">
+			<header className="App-header"></header>
+			<ContactList contacts={contacts} />
+		</div>
+	);
 }
 
 export default App;
