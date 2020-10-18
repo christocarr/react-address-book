@@ -5,19 +5,33 @@ import Contact from '../components/Contact';
 function ContactList({ contacts }) {
 	return (
 		<div>
-			{contacts.map(({ name, address, telephone, email }, index) => (
-				<Contact
-					key={index}
-					name={name}
-					addressLineOne={address.addressLineOne}
-					addressLineTwo={address.addressLineTwo}
-					city={address.city}
-					county={address.county}
-					postcode={address.postcode}
-					telephone={telephone}
-					email={email}
-				/>
-			))}
+			{contacts.map(
+				(
+					{
+						name,
+						addressLineOne,
+						addressLineTwo,
+						city,
+						county,
+						postcode,
+						telephone,
+						email,
+					},
+					index
+				) => (
+					<Contact
+						key={index}
+						name={name}
+						addressLineOne={addressLineOne}
+						addressLineTwo={addressLineTwo}
+						city={city}
+						county={county}
+						postcode={postcode}
+						telephone={telephone}
+						email={email}
+					/>
+				)
+			)}
 		</div>
 	);
 }

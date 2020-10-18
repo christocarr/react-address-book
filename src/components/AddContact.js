@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 function AddContact({ setContacts }) {
 	const [newContact, setNewContact] = useState({
 		name: '',
-		firstLine: '',
-		secondLine: '',
+		addressLineOne: '',
+		addressLineTwo: '',
 		city: '',
 		postcode: '',
 		telephone: '',
@@ -13,7 +13,6 @@ function AddContact({ setContacts }) {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		console.log(name, value);
 		setNewContact((prevState) => ({
 			...prevState,
 			[name]: value,
@@ -35,8 +34,8 @@ function AddContact({ setContacts }) {
 					onChange={handleChange}
 				/>
 				<input
-					value={newContact.firstLine}
-					name="firstLine"
+					value={newContact.addressLineOne}
+					name="addressLineOne"
 					type="text"
 					onChange={handleChange}
 				/>
