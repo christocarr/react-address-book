@@ -1,4 +1,6 @@
 import React from 'react';
+import EditContact from './EditContact'
+import DeleteContact from './DeleteContact'
 
 //destructure props and render 
 function Contact({
@@ -12,6 +14,7 @@ function Contact({
 }) {
 	return (
 		<div>
+		<div>
 			<h3>{name}</h3>
 			<p>{addressLineOne}</p>
 			<p>{addressLineTwo}</p>
@@ -19,6 +22,9 @@ function Contact({
 			<p>{postcode}</p>
 			<p>{telephone}</p>
 			<p>{email}</p>
+		</div>
+			<EditContact />
+			<DeleteContact />
 		</div>
 	);
 }
