@@ -11,6 +11,8 @@ function AddContact({ setContacts }) {
 		telephone: '',
 		email: '',
 	});
+	const [addressSelect, setAddressSelect] = useState('');
+	const [postcode, setPostcode] = useState('');
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -27,7 +29,7 @@ function AddContact({ setContacts }) {
 
 	return (
 		<div>
-			<PostCodeSearch />
+			<PostCodeSearch setAddressSelect={setAddressSelect} setPostcode={setPostcode} />
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="name">Name</label>
 				<input

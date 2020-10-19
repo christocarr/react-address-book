@@ -1,29 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function PostCodeSearch() {
+function PostCodeSearch({ setAddressSelect, setPostcode }) {
 	const [search, setSearch] = useState('');
-	const [addresses, setAddresses] = useState([])
+	const [addresses, setAddresses] = useState([]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		const APIKEY = 'HF5s4vq7pEupvXLhw7uCWg28754';
+		const APIKEY1 = 'HF5s4vq7pEupvXLhw7uCWg28754';
+		const APIKEY2= 'HVgKKzu4o0as4MlYxN64XA28757'
 
 		const getAddresses = async () => {
 			let res = await fetch(
-				`https://api.getAddress.io/find/${search}?api-key=${APIKEY}`
+				`https://api.getAddress.io/find/${search}?api-key=${APIKEY2}`
 			);
 			let data = await res.json();
 			console.log(data.addresses);
-			setAddresses(data.addresses)
+			setAddresses(data.addresses);
 		};
 
-		getAddresses()
+		getAddresses();
+		setPostcode(search)
 	}
 
-	useEffect(() => {
 
-	}, [])
 
 	return (
 		<div>
@@ -34,13 +34,13 @@ function PostCodeSearch() {
 					type="text"
 				/>
 				<button>Search</button>
-				{addresses.length > 0 &&
-					<select>
+				{addresses.length > 0 && (
+					<select onChange={(e) => setAddressSelect(e.target.value)}>
 						{addresses.map((v, i) => (
 							<option key={i}>{v}</option>
 						))}
 					</select>
-				}
+				)}
 			</form>
 		</div>
 	);
