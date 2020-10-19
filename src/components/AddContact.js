@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PostCodeSearch from './PostCodeSearch';
 
 function AddContact({ setContacts }) {
 	const [newContact, setNewContact] = useState({
@@ -26,6 +27,7 @@ function AddContact({ setContacts }) {
 
 	return (
 		<div>
+			<PostCodeSearch />
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="name">Name</label>
 				<input
