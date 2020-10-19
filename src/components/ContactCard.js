@@ -8,21 +8,23 @@ function ContactCard({
 	addressLineOne,
 	addressLineTwo,
 	city,
+	county,
 	postcode,
 	telephone,
 	email,
 }) {
 	return (
 		<div>
-		<div>
+		<address>
 			<h3>{name}</h3>
 			<p>{addressLineOne}</p>
 			<p>{addressLineTwo}</p>
 			<p>{city}</p>
+			<p>{county}</p>
 			<p>{postcode}</p>
 			<p>{telephone}</p>
 			<p>{email}</p>
-		</div>
+		</address>
 			<EditContact />
 			<DeleteContact />
 		</div>
