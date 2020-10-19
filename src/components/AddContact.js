@@ -14,6 +14,7 @@ function AddContact({ setContacts }) {
 	const [addressSelect, setAddressSelect] = useState('');
 	const [postcode, setPostcode] = useState('');
 
+	// set individual contact properties on form input change
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setNewContact((prevState) => ({
@@ -22,6 +23,7 @@ function AddContact({ setContacts }) {
 		}));
 	};
 
+	//add new contact to contact list on form submit
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setContacts((prevState) => [...prevState, newContact]);

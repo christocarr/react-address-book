@@ -1,7 +1,7 @@
 import React from 'react';
-import Contact from '../components/Contact';
+import ContactCard from './ContactCard';
 
-//map over contacts and render each contact as component
+//map over contacts passed from App and render each contact as component
 function ContactList({ contacts }) {
 	return (
 		<div>
@@ -19,7 +19,7 @@ function ContactList({ contacts }) {
 					},
 					index
 				) => (
-					<Contact
+					<ContactCard
 						key={index}
 						name={name}
 						addressLineOne={addressLineOne}

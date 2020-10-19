@@ -3,7 +3,7 @@ import EditContact from './EditContact'
 import DeleteContact from './DeleteContact'
 
 //destructure props and render 
-function Contact({
+function ContactCard({
 	name,
 	addressLineOne,
 	addressLineTwo,
@@ -29,4 +29,4 @@ function Contact({
 	);
 }
 
-export default Contact;
+export default ContactCard;

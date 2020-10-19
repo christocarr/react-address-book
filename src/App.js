@@ -3,7 +3,7 @@ import AddContact from './components/AddContact';
 import ContactList from './components/ContactList';
 
 function App() {
-	//set state to array which will update with objects
+	//set state to array which will update with contact objects
 	const [contacts, setContacts] = useState([]);
 
 	return (
