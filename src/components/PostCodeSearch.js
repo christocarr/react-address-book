@@ -4,6 +4,7 @@ function PostCodeSearch({ setAddressSelect, setPostcode }) {
 	const [search, setSearch] = useState('');
 	const [addresses, setAddresses] = useState([]);
 
+	// fetch addresses from api on postcode form submit
 	function handleSubmit(e) {
 		e.preventDefault();
 
@@ -15,11 +16,12 @@ function PostCodeSearch({ setAddressSelect, setPostcode }) {
 				`https://api.getAddress.io/find/${search}?api-key=${APIKEY2}`
 			);
 			let data = await res.json();
-			console.log(data.addresses);
+			//set addresses to addresses array
 			setAddresses(data.addresses);
 		};
 
 		getAddresses();
+		//pass postcode to add contact component
 		setPostcode(search)
 	}
 
@@ -34,6 +36,7 @@ function PostCodeSearch({ setAddressSelect, setPostcode }) {
 					type="text"
 				/>
 				<button>Search</button>
+				{/* only when address array is not empty display select with option from address array */}
 				{addresses.length > 0 && (
 					<select onChange={(e) => setAddressSelect(e.target.value)}>
 						{addresses.map((v, i) => (
