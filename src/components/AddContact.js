@@ -3,15 +3,18 @@ import PostCodeSearch from './PostCodeSearch';
 import AddContactForm from './AddContactForm';
 
 function AddContact({ setContacts }) {
-	const [newContact, setNewContact] = useState({
+		const initialNewState = {
 		name: '',
 		addressLineOne: '',
 		addressLineTwo: '',
 		city: '',
 		county: '',
-	});
+		postcode: '',
+		telephone: '',
+		email: '',
+	}
+	const [newContact, setNewContact] = useState(initialNewState);
 	const [addressSelect, setAddressSelect] = useState('');
-	const [postcode, setPostcode] = useState('');
 
 	// set individual contact properties on form input change
 	const handleChange = (e) => {
@@ -22,29 +25,22 @@ function AddContact({ setContacts }) {
 		}));
 	};
 
-	useEffect(() => {
-		const addressArray = addressSelect.split(',')
-		console.log(addressArray)
-		const addressObject = {}
-	}, [postcode, addressSelect])
-
 	//add new contact to contact list on form submit
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setContacts((prevState) => [...prevState, newContact]);
+		setNewContact(initialNewState)
 	};
 
 	return (
 		<div>
 			<PostCodeSearch
 				setAddressSelect={setAddressSelect}
-				setPostcode={setPostcode}
 			/>
 			<AddContactForm
 				handleChange={handleChange}
 				handleSubmit={handleSubmit}
 				newContact={newContact}
-				postcode={postcode}
 			/>
 		</div>
 	);
