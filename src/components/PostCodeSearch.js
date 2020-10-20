@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function PostCodeSearch({ setAddressSelect, setPostcode }) {
+function PostCodeSearch({ setAddressSelect, setNewPostcode }) {
 	const [search, setSearch] = useState('');
 	const [addresses, setAddresses] = useState([]);
 
@@ -22,7 +22,7 @@ function PostCodeSearch({ setAddressSelect, setPostcode }) {
 
 		getAddresses();
 		//pass postcode to add contact component
-		setPostcode(search)
+		setNewPostcode(search)
 	}
 
 
@@ -39,6 +39,7 @@ function PostCodeSearch({ setAddressSelect, setPostcode }) {
 				{/* only when address array is not empty display select with option from address array */}
 				{addresses.length > 0 && (
 					<select onChange={(e) => setAddressSelect(e.target.value)}>
+						<option value=''>select your address</option>
 						{addresses.map((v, i) => (
 							<option key={i}>{v}</option>
 						))}
