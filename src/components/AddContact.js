@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PostCodeSearch from './PostCodeSearch';
 import AddContactForm from './AddContactForm';
 
@@ -9,9 +9,6 @@ function AddContact({ setContacts }) {
 		addressLineTwo: '',
 		city: '',
 		county: '',
-		postcode: '',
-		telephone: '',
-		email: '',
 	});
 	const [addressSelect, setAddressSelect] = useState('');
 	const [postcode, setPostcode] = useState('');
@@ -24,6 +21,12 @@ function AddContact({ setContacts }) {
 			[name]: value,
 		}));
 	};
+
+	useEffect(() => {
+		const addressArray = addressSelect.split(',')
+		console.log(addressArray)
+		const addressObject = {}
+	}, [postcode, addressSelect])
 
 	//add new contact to contact list on form submit
 	const handleSubmit = (e) => {
@@ -41,6 +44,7 @@ function AddContact({ setContacts }) {
 				handleChange={handleChange}
 				handleSubmit={handleSubmit}
 				newContact={newContact}
+				postcode={postcode}
 			/>
 		</div>
 	);

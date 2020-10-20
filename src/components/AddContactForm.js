@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AddContactForm({ handleSubmit, handleChange, newContact }) {
+function AddContactForm({ handleSubmit, handleChange, newContact, postcode }) {
 	return (
 		<form onSubmit={handleSubmit}>
 			<label htmlFor="name">Name</label>
@@ -51,7 +51,7 @@ function AddContactForm({ handleSubmit, handleChange, newContact }) {
 			<label htmlFor="postcode">Postcode</label>
 			<input
 				id="postcode"
-				value={newContact.postcode}
+				value={postcode}
 				name="postcode"
 				type="text"
         onChange={handleChange}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function PostCodeSearch({ setAddressSelect, setNewPostcode }) {
+function PostCodeSearch({ setAddressSelect, setPostcode }) {
 	const [search, setSearch] = useState('');
 	const [addresses, setAddresses] = useState([]);
 
@@ -22,7 +22,7 @@ function PostCodeSearch({ setAddressSelect, setNewPostcode }) {
 
 		getAddresses();
 		//pass postcode to add contact component
-		setNewPostcode(search)
+		setPostcode(search)
 	}
 
 
