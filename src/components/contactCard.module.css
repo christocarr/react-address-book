@@ -1,0 +1,7 @@
+.contact__card_container {
+  background: #7ba9c9;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}

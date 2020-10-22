@@ -1,3 +1,7 @@
+html {
+  width: 100vw;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,4 +10,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+header h1 {
+  margin: 0;
+}
+
+button {
+  margin-bottom: 0.5em;
+  width: 50%;
 }

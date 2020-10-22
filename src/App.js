@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ContactForm from './components/ContactForm'
 import ContactList from './components/ContactList';
+import '../src/index.css'
 
 function App() {
 
