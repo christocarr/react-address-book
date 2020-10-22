@@ -1,39 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ContactCard from './ContactCard';
 
 //map over contacts passed from App and render each contact as component
-function ContactList({ contacts }) {
+function ContactList({ contactList }) {
+	console.log(contactList);
 	return (
 		<div>
-			{contacts.map(
-				(
-					{
-						name,
-						addressLineOne,
-						addressLineTwo,
-						city,
-						county,
-						postcode,
-						telephone,
-						email,
-					},
-					index
-				) => (
-					<ContactCard
-						key={index}
-						name={name}
-						addressLineOne={addressLineOne}
-						addressLineTwo={addressLineTwo}
-						city={city}
-						county={county}
-						postcode={postcode}
-						telephone={telephone}
-						email={email}
-					/>
-				)
-			)}
+			{contactList.map((contact, index) => (
+				<ContactCard key={index} contact={contact} />
+			))}
 		</div>
 	);
 }
 
-export default ContactList;
+const mapStateToProps = (state) => {
+	return { contactList: state.addContact };
+};
+
+export default connect(mapStateToProps)(ContactList);
