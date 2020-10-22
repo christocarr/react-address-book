@@ -9,11 +9,11 @@ function PostCodeSearch({ setAddressSelect, setPostcode }) {
 		e.preventDefault();
 
 		const APIKEY1 = 'HF5s4vq7pEupvXLhw7uCWg28754';
-		const APIKEY2= 'HVgKKzu4o0as4MlYxN64XA28757'
+		const APIKEY2 = 'HVgKKzu4o0as4MlYxN64XA28757';
 
 		const getAddresses = async () => {
 			let res = await fetch(
-				`https://api.getAddress.io/find/${search}?api-key=${APIKEY2}`
+				`https://api.getAddress.io/find/${search}?api-key=${APIKEY1}`
 			);
 			let data = await res.json();
 			//set addresses to addresses array
@@ -22,10 +22,8 @@ function PostCodeSearch({ setAddressSelect, setPostcode }) {
 
 		getAddresses();
 		//pass postcode to add contact component
-		setPostcode(search)
+		setPostcode(search);
 	}
-
-
 
 	return (
 		<div>
@@ -39,7 +37,7 @@ function PostCodeSearch({ setAddressSelect, setPostcode }) {
 				{/* only when address array is not empty display select with option from address array */}
 				{addresses.length > 0 && (
 					<select onChange={(e) => setAddressSelect(e.target.value)}>
-						<option value=''>select your address</option>
+						<option value="">select your address</option>
 						{addresses.map((v, i) => (
 							<option key={i}>{v}</option>
 						))}
