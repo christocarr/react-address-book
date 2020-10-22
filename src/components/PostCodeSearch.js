@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectedAddress } from "./actions";
+import { selectedAddress } from "../actions";
 import AsyncSelect from "react-select/async";
 
 function PostcodeSearch(props) {

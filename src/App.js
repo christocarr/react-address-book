@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ContactForm from './components/ContactForm'
-import AddContact from './components/AddContact';
 import ContactList from './components/ContactList';
 
 function App() {
