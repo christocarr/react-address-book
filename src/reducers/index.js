@@ -1,13 +1,22 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
 const selectedAddressReducer = (selectedAddress = null, action) => {
-  if (action.type === "ADDRESS_SELECTED") {
-    return action.payload;
-  }
+	if (action.type === 'ADDRESS_SELECTED') {
+		return action.payload;
+	}
 
-  return selectedAddress;
+	return selectedAddress;
+};
+
+const addContactReducer = (contactsList = [], action) => {
+	if (action.type === 'NEW_CONTACT') {
+		return [...contactsList, action.payload];
+	}
+
+	return contactsList;
 };
 
 export default combineReducers({
-  selectedAddress: selectedAddressReducer
+	selectedAddress: selectedAddressReducer,
+	addContact: addContactReducer,
 });
