@@ -3,9 +3,6 @@ import ContactForm from './components/ContactForm'
 import ContactList from './components/ContactList';
 
 function App() {
-	//set state to array which will update with contact objects
-	const [contacts, setContacts] = useState([]);
-
 
 	return (
 		<div className="App">
@@ -13,7 +10,7 @@ function App() {
 				<h1>Address Book</h1>
 			</header>
 		<ContactForm />
-		<ContactList contacts={contacts} />
+		<ContactList />
 		</div>
 	);
 }
