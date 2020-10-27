@@ -4,19 +4,23 @@ import ContactCard from './ContactCard';
 import styles from '../components/contactList.module.css'
 
 //map over contacts passed from App and render each contact as component
-function ContactList({ contactList }) {
-	console.log(contactList);
+function ContactList(props) {
+	console.log(props)
 	return (
 		<div className={styles.contactlist__container}>
-			{contactList.map((contact, index) => (
-				<ContactCard key={index} contact={contact} />
-			))}
+			{props.contactList ?
+				props.contactList.map((contact, index) => (
+					<ContactCard key={index} contact={contact} />
+				))
+				:
+				<p>No Contacts!</p>
+			}
 		</div>
 	);
 }
 
 const mapStateToProps = (state) => {
-	return { contactList: state.addContact };
+	return { contactList: state.contacts };
 };
 
 export default connect(mapStateToProps)(ContactList);
