@@ -1,32 +1,31 @@
 import React from 'react';
 import EditContact from './EditContact';
 import DeleteContact from './DeleteContact';
-import styles from './contactCard.module.css'
+import styles from './contactCard.module.css';
 
 //destructure props and render
 function ContactCard({ contact }) {
-	console.log(contact);
 	return (
 		<div className={styles.contact__card_container}>
 			<address>
 				<h3>{contact.name}</h3>
 				<p>
-					{contact.address.firstLine}
+					{contact.firstLine}
 					<br />
-					{contact.address.secondLine}
+					{contact.secondLine}
 					<br />
-					{contact.address.town}
+					{contact.town}
 					<br />
-					{contact.address.county}
+					{contact.county}
 					<br />
-					{contact.address.postcode}
-					<br />
-					{contact.telephone}
+					{contact.postcode}
 					<br />
 					{contact.email}
+					<br />
+					{contact.phone}
 				</p>
 			</address>
-			<EditContact />
+			<EditContact contact={contact} />
 			<DeleteContact />
 		</div>
 	);
