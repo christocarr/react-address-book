@@ -6,9 +6,16 @@ export const selectedAddress = (address) => {
 	};
 };
 
-export const addContact = (contact) => {
+export const addContact = (newContact) => {
 	return {
-		type: 'NEW_CONTACT',
+		type: 'ADD_CONTACT',
+		payload: newContact,
+	};
+};
+
+export const deleteContact = (contact) => {
+	return {
+		type: 'DELETE_CONTACT',
 		payload: contact,
 	};
 };
