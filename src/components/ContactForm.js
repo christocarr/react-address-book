@@ -18,7 +18,6 @@ function ContactForm({ addContact }) {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
     setNewContact({...contact, [name]: value})
-    console.log(contact)
   };
   
   const handleSubmit = (e) => {
@@ -46,6 +45,7 @@ function ContactForm({ addContact }) {
 					type="text"
 					name="name"
 					placeholder="name"
+					required
 				/>
 				<input
 					value={contact.firstLine}
@@ -88,6 +88,7 @@ function ContactForm({ addContact }) {
 					type="text"
 					name="email"
 					placeholder="email"
+					required
 				/>
 				<input
 					value={contact.phone}
