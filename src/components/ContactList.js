@@ -19,8 +19,7 @@ function ContactList({ contactList }) {
 }
 
 const mapStateToProps = (state) => {
-	console.log(state);
-	return { contactList: state };
+	return { contactList: state.contactList };
 };
 
 export default connect(mapStateToProps)(ContactList);
