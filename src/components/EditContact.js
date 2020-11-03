@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import { editContact } from '../actions';
 
-function EditContact() {
-  return (
-    <button>Edit</button>
-  )
+function EditContact({ editContact }) {
+	function handleClick() {
+		editContact({
+			type: 'EDIT_CONTACT',
+		});
+	}
+	return <button onClick={handleClick}>Edit</button>;
 }
 
-export default EditContact
+export default connect(null, { editContact })(EditContact);

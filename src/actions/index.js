@@ -19,3 +19,9 @@ export const deleteContact = (contact) => {
 		payload: contact,
 	};
 };
+
+export const editContact = () => {
+	return {
+		type: 'EDIT_CONTACT',
+	};
+};

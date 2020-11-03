@@ -1,7 +1,7 @@
 const initialState = {
 	contactList: [],
-	editContact: false
-}
+	editContact: false,
+};
 
 function rootReducer(state = initialState, action) {
 	if (action.type === 'ADD_CONTACT') {
@@ -11,16 +11,25 @@ function rootReducer(state = initialState, action) {
 		);
 		if (!contactExists) {
 			return Object.assign({}, state, {
-				contactList: state.contactList.concat(action.payload)
-			})
+				contactList: state.contactList.concat(action.payload),
+			});
 		}
 	}
 
 	if (action.type === 'DELETE_CONTACT') {
 		return {
 			...state,
-			contactList: state.contactList.filter((contact) => contact.email !== action.payload.contact)
-		}
+			contactList: state.contactList.filter(
+				(contact) => contact.email !== action.payload.contact
+			),
+		};
+	}
+
+	if (action.type === 'EDIT_CONTACT') {
+		return {
+			...state,
+			editContact: !state.editContact,
+		};
 	}
 	return state;
 }
