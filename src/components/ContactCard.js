@@ -26,7 +26,7 @@ function ContactCard({ contact }) {
 				</p>
 			</address>
 			<EditContact contact={contact} />
-			<DeleteContact />
+			<DeleteContact contact={contact} />
 		</div>
 	);
 }
