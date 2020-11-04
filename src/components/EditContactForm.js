@@ -1,52 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addContact } from '../actions';
 import styles from './editContactForm.module.css';
 
 function EditContactForm({ contact }) {
-	console.log(contact);
-
-	const {
-		name,
-		firstLine,
-		secondLine,
-		town,
-		county,
-		postcode,
-		email,
-		phone,
-	} = contact;
-
-	const [editContact, setEditContact] = useState({
-		name: '',
-		firstLine: '',
-		secondLine: '',
-		town: '',
-		county: '',
-		postcode: '',
-		email: '',
-		phone: '',
-	});
-
-	useEffect(() => {
-		setEditContact({
-			name,
-			firstLine,
-			secondLine,
-			town,
-			county,
-			postcode,
-			email,
-			phone,
-		});
-	}, []);
+	const [editContact, setEditContact] = useState(contact);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setEditContact({ ...contact, [name]: value });
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		addContact(editContact);
+	};
+
 	return (
 		<div className={styles.edit__form_container}>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<input
 					value={editContact.name}
 					onChange={handleChange}
@@ -107,9 +79,10 @@ function EditContactForm({ contact }) {
 					name="phone"
 					placeholder="phone"
 				/>
+				<button>Update</button>
 			</form>
 		</div>
 	);
 }
 
-export default EditContactForm;
+export default connect(null, { addContact })(EditContactForm);
