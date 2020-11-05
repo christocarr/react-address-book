@@ -5,36 +5,37 @@ import styles from './contactForm.module.css';
 
 function ContactForm({ addContact }) {
 	const [contact, setNewContact] = useState({
-		name: '',	
-    firstLine: '',
-    secondLine: '',
-    town: '',
-    county: '',
-    postcode: '',
+		name: '',
+		firstLine: '',
+		secondLine: '',
+		town: '',
+		county: '',
+		postcode: '',
 		email: '',
 		phone: '',
+		date: '',
 	});
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-    setNewContact({...contact, [name]: value})
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    //send contact to store
-    addContact(contact)
-    setNewContact({
-      name: '',	
-      firstLine: '',
-      secondLine: '',
-      town: '',
-      county: '',
-      postcode: '',
-      email: '',
-      phone: '',
-    })
-  }
+		setNewContact({ ...contact, [name]: value });
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		//send contact to store
+		addContact({ ...contact, date: Date.now() });
+		setNewContact({
+			name: '',
+			firstLine: '',
+			secondLine: '',
+			town: '',
+			county: '',
+			postcode: '',
+			email: '',
+			phone: '',
+		});
+	};
 
 	return (
 		<div className={styles.form__container}>
@@ -103,11 +104,4 @@ function ContactForm({ addContact }) {
 	);
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   console.log(dispatch)
-//   return {
-//     addContact: (contact) => dispatch(addContact(contact))
-//   }
-// }
-
-export default connect(null, {addContact})(ContactForm);
+export default connect(null, { addContact })(ContactForm);
