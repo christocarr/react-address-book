@@ -20,8 +20,8 @@ export const deleteContact = (contact) => {
 	};
 };
 
-export const editContact = () => {
+export const toggleEditContact = () => {
 	return {
-		type: 'EDIT_CONTACT',
+		type: 'TOGGLE_EDIT_CONTACT',
 	};
 };

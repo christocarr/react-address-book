@@ -6,8 +6,8 @@ import EditContactForm from './EditContactForm';
 import styles from './contactCard.module.css';
 
 //destructure props and render
-function ContactCard({ contact, editContact }) {
-	return editContact ? (
+function ContactCard({ contact, toggleEditContact }) {
+	return toggleEditContact ? (
 		<EditContactForm contact={contact} />
 	) : (
 		<div className={styles.contact__card_container}>
@@ -35,9 +35,9 @@ function ContactCard({ contact, editContact }) {
 	);
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ toggleEditContact }) => {
 	return {
-		editContact: state.editContact,
+		toggleEditContact,
 	};
 };
 

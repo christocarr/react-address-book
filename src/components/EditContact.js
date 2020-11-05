@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { editContact } from '../actions';
+import { toggleEditContact } from '../actions';
 
-function EditContact({ editContact }) {
+function EditContact({ toggleEditContact }) {
 	function handleClick() {
-		editContact({
-			type: 'EDIT_CONTACT',
+		toggleEditContact({
+			type: 'TOGGLE_EDIT_CONTACT',
 		});
 	}
 	return <button onClick={handleClick}>Edit</button>;
 }
 
-export default connect(null, { editContact })(EditContact);
+export default connect(null, { toggleEditContact })(EditContact);

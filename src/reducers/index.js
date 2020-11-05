@@ -1,6 +1,6 @@
 const initialState = {
 	contactList: [],
-	editContact: false,
+	toggleEditContact: false,
 };
 
 function rootReducer(state = initialState, action) {
@@ -25,10 +25,10 @@ function rootReducer(state = initialState, action) {
 		};
 	}
 
-	if (action.type === 'EDIT_CONTACT') {
+	if (action.type === 'TOGGLE_EDIT_CONTACT') {
 		return {
 			...state,
-			editContact: !state.editContact,
+			toggleEditContact: !state.toggleEditContact,
 		};
 	}
 	return state;
