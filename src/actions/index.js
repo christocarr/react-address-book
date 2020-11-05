@@ -25,3 +25,10 @@ export const toggleEditContact = () => {
 		type: 'TOGGLE_EDIT_CONTACT',
 	};
 };
+
+export const updateContact = (updatedContact) => {
+	return {
+		type: 'UPDATE_CONTACT',
+		payload: updatedContact
+	}
+}

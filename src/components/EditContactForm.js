@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { addContact, toggleEditContact } from '../actions';
+import { updateContact, toggleEditContact } from '../actions';
 import styles from './editContactForm.module.css';
 
-function EditContactForm({ contact, addContact, toggleEditContact }) {
+function EditContactForm({ contact, updateContact, toggleEditContact }) {
 	const [updatedContact, setUpdatedContact] = useState({
 		name: '',
 		firstLine: '',
@@ -25,10 +25,8 @@ function EditContactForm({ contact, addContact, toggleEditContact }) {
 	};
 
 	const handleSubmit = (e) => {
-		console.log('submitting');
-		console.log(updatedContact);
 		e.preventDefault();
-		addContact(updatedContact);
+		updateContact(updatedContact);
 		toggleEditContact({
 			type: 'TOGGLE_EDIT_CONTACT',
 		});
@@ -101,4 +99,4 @@ function EditContactForm({ contact, addContact, toggleEditContact }) {
 	);
 }
 
-export default connect(null, { addContact, toggleEditContact })(EditContactForm);
+export default connect(null, { updateContact, toggleEditContact })(EditContactForm);

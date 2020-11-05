@@ -31,6 +31,14 @@ function rootReducer(state = initialState, action) {
 			toggleEditContact: !state.toggleEditContact,
 		};
 	}
+
+	if (action.type === 'UPDATE_CONTACT') {
+		return Object.assign({}, state, {
+			contactList: state.contactList.map((contact) =>
+				contact.date === action.payload.date ? action.payload : contact
+			),
+		});
+	}
 	return state;
 }
 
