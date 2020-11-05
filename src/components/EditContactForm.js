@@ -17,7 +17,7 @@ function EditContactForm({ contact, addContact, toggleEditContact }) {
 
 	useEffect(() => {
 		setUpdatedContact(contact);
-	}, []);
+	}, [contact]);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
