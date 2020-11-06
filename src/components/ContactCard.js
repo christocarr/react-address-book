@@ -31,8 +31,10 @@ function ContactCard({ contact, toggleEditContact }) {
 				<br />
 				{contact.phone}
 			</p>
-			<EditContact contact={contact} />
-			<DeleteContact contact={contact} />
+			<div className={styles.button__container}>
+				<EditContact contact={contact} />
+				<DeleteContact contact={contact} />
+			</div>
 		</div>
 	);
 }
