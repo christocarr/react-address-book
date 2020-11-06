@@ -1,3 +1,11 @@
 .edit__form_container {
   background-color: paleturquoise;
+  padding: 1em;
+}
+
+.edit__form_container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
