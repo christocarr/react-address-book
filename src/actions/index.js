@@ -32,3 +32,9 @@ export const updateContact = (updatedContact) => {
 		payload: updatedContact
 	}
 }
+
+export const toggleModal = () => {
+	return {
+		type: 'TOGGLE_MODAL'
+	}
+}

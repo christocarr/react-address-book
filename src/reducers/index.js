@@ -1,6 +1,7 @@
 const initialState = {
 	contactList: [],
 	toggleEditContact: false,
+	showModal: false,
 };
 
 function rootReducer(state = initialState, action) {
@@ -30,6 +31,13 @@ function rootReducer(state = initialState, action) {
 			...state,
 			toggleEditContact: !state.toggleEditContact,
 		};
+	}
+
+	if (action.type === 'TOGGLE_MODAL') {
+		return {
+			...state,
+			showModal: !state.showModal
+		}
 	}
 
 	if (action.type === 'UPDATE_CONTACT') {
