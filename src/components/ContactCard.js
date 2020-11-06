@@ -11,8 +11,8 @@ function ContactCard({ contact, toggleEditContact }) {
 		<EditContactForm contact={contact} />
 	) : (
 		<div className={styles.contact__card_container}>
+			<h3>{contact.name}</h3>
 			<address>
-				<h3>{contact.name}</h3>
 				<p>
 					{contact.firstLine}
 					<br />
@@ -24,11 +24,13 @@ function ContactCard({ contact, toggleEditContact }) {
 					<br />
 					{contact.postcode}
 					<br />
-					{contact.email}
-					<br />
-					{contact.phone}
 				</p>
 			</address>
+			<p>
+				{contact.email}
+				<br />
+				{contact.phone}
+			</p>
 			<EditContact contact={contact} />
 			<DeleteContact contact={contact} />
 		</div>
