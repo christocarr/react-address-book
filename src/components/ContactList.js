@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ContactCard from './ContactCard';
-import EditContactForm from './EditContactForm';
-import Modal from './Modal';
+import EditContactForm from './EditContactForm'
 import styles from '../components/contactList.module.css';
 
-//map over contacts passed from App and render each contact as component
 function ContactList({ contactList, showModal }) {
 	return (
 		<div className={styles.contactlist__container}>
@@ -20,7 +18,6 @@ function ContactList({ contactList, showModal }) {
 			) : (
 				<p>No Contacts!</p>
 			)}
-			{showModal ? <Modal /> : null}
 		</div>
 	);
 }
@@ -28,7 +25,6 @@ function ContactList({ contactList, showModal }) {
 const mapStateToProps = (state) => {
 	return {
 		contactList: state.contactList,
-		showModal: state.showModal,
 	};
 };
 

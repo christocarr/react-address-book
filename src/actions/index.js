@@ -34,8 +34,3 @@ export const updateContact = (updatedContact) => {
 	};
 };
 
-export const toggleModal = () => {
-	return {
-		type: 'TOGGLE_MODAL',
-	};
-};

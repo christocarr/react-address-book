@@ -1,6 +1,5 @@
 const initialState = {
-	contactList: [],
-	showModal: false,
+	contactList: []
 };
 
 function rootReducer(state = initialState, action) {
