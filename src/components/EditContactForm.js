@@ -33,6 +33,13 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 		});
 	};
 
+	const handleCancel = () => {
+		toggleEditContact({
+			type: 'TOGGLE_EDIT_CONTACT',
+			editingContact: contact
+		})
+	}
+
 	return (
 		<div className={styles.edit__form_container}>
 			<form onSubmit={handleSubmit} className={styles.form}>
@@ -94,7 +101,8 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 					name="phone"
 					placeholder="phone"
 				/>
-				<button>Update</button>
+				<button type="submit">Update</button>
+				<button onClick={handleCancel}>Cancel</button>
 			</form>
 		</div>
 	);
