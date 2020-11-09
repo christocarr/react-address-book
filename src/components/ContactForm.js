@@ -24,7 +24,7 @@ function ContactForm({ addContact }) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		//send contact to store
-		addContact({ ...contact, date: Date.now() });
+		addContact({ ...contact, date: Date.now(), editing: false });
 		setNewContact({
 			name: '',
 			firstLine: '',

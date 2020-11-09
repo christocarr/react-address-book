@@ -20,21 +20,22 @@ export const deleteContact = (contact) => {
 	};
 };
 
-export const toggleEditContact = () => {
+export const toggleEditContact = (editingContact) => {
 	return {
 		type: 'TOGGLE_EDIT_CONTACT',
+		payload: editingContact,
 	};
 };
 
 export const updateContact = (updatedContact) => {
 	return {
 		type: 'UPDATE_CONTACT',
-		payload: updatedContact
-	}
-}
+		payload: updatedContact,
+	};
+};
 
 export const toggleModal = () => {
 	return {
-		type: 'TOGGLE_MODAL'
-	}
-}
+		type: 'TOGGLE_MODAL',
+	};
+};

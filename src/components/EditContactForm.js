@@ -29,6 +29,7 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 		updateContact(updatedContact);
 		toggleEditContact({
 			type: 'TOGGLE_EDIT_CONTACT',
+			editingContact: contact,
 		});
 	};
 
@@ -99,4 +100,6 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 	);
 }
 
-export default connect(null, { updateContact, toggleEditContact })(EditContactForm);
+export default connect(null, { updateContact, toggleEditContact })(
+	EditContactForm
+);

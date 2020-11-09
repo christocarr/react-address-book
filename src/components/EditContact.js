@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { toggleEditContact, toggleModal } from '../actions';
 
-function EditContact({ toggleEditContact, toggleModal }) {
+function EditContact({ toggleEditContact, toggleModal, contact}) {
 	function handleClick() {
 		toggleEditContact({
 			type: 'TOGGLE_EDIT_CONTACT',
+			editingContact: contact
 		});
 		toggleModal()
 	}
