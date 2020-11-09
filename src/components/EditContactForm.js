@@ -35,7 +35,7 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 
 	return (
 		<div className={styles.edit__form_container}>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className={styles.form}>
 				<input
 					value={updatedContact.name}
 					onChange={handleChange}

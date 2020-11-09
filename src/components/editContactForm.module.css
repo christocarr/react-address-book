@@ -1,11 +1,20 @@
 .edit__form_container {
-  background-color: paleturquoise;
+  background: #7ba9c9;
   padding: 1em;
+  width: 100%;
 }
 
-.edit__form_container form {
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  margin: 0;
+}
+
+.form input {
+  margin-bottom: 0.5em;
+  width: 90%;
+  padding: 0.5em;
 }
