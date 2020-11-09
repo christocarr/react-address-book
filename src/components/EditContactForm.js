@@ -29,7 +29,7 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 		updateContact(updatedContact);
 		toggleEditContact({
 			type: 'TOGGLE_EDIT_CONTACT',
-			editingContact: contact,
+			editingContact: updatedContact,
 		});
 	};
 
