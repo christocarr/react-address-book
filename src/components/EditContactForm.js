@@ -35,75 +35,73 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 	const handleCancel = () => {
 		toggleEditContact({
 			type: 'TOGGLE_EDIT_CONTACT',
-			editingContact: contact
-		})
-	}
+			editingContact: contact,
+		});
+	};
 
 	return (
-		<div>
-			<form onSubmit={handleSubmit}>
-				<input
-					value={updatedContact.name}
-					onChange={handleChange}
-					type="text"
-					name="name"
-					placeholder="name"
-					required
-				/>
-				<input
-					value={updatedContact.firstLine}
-					onChange={handleChange}
-					type="text"
-					name="firstLine"
-					placeholder="first line"
-				/>
-				<input
-					value={updatedContact.secondLine}
-					onChange={handleChange}
-					type="text"
-					name="secondLine"
-					placeholder="second line"
-				/>
-				<input
-					value={updatedContact.town}
-					onChange={handleChange}
-					type="text"
-					name="town"
-					placeholder="town"
-				/>
-				<input
-					value={updatedContact.county}
-					onChange={handleChange}
-					type="text"
-					name="county"
-					placeholder="county"
-				/>
-				<input
-					value={updatedContact.postcode}
-					onChange={handleChange}
-					type="text"
-					name="postcode"
-					placeholder="postcode"
-				/>
-				<input
-					value={updatedContact.email}
-					onChange={handleChange}
-					type="text"
-					name="email"
-					placeholder="email"
-					required
-				/>
-				<input
-					value={updatedContact.phone}
-					onChange={handleChange}
-					type="text"
-					name="phone"
-					placeholder="phone"
-				/>
-				<button type="submit">Update</button>
-				<button onClick={handleCancel}>Cancel</button>
-			</form>
-		</div>
+		<form onSubmit={handleSubmit} className="form edit__contact">
+			<input
+				value={updatedContact.name}
+				onChange={handleChange}
+				type="text"
+				name="name"
+				placeholder="name"
+				required
+			/>
+			<input
+				value={updatedContact.firstLine}
+				onChange={handleChange}
+				type="text"
+				name="firstLine"
+				placeholder="first line"
+			/>
+			<input
+				value={updatedContact.secondLine}
+				onChange={handleChange}
+				type="text"
+				name="secondLine"
+				placeholder="second line"
+			/>
+			<input
+				value={updatedContact.town}
+				onChange={handleChange}
+				type="text"
+				name="town"
+				placeholder="town"
+			/>
+			<input
+				value={updatedContact.county}
+				onChange={handleChange}
+				type="text"
+				name="county"
+				placeholder="county"
+			/>
+			<input
+				value={updatedContact.postcode}
+				onChange={handleChange}
+				type="text"
+				name="postcode"
+				placeholder="postcode"
+			/>
+			<input
+				value={updatedContact.email}
+				onChange={handleChange}
+				type="text"
+				name="email"
+				placeholder="email"
+				required
+			/>
+			<input
+				value={updatedContact.phone}
+				onChange={handleChange}
+				type="text"
+				name="phone"
+				placeholder="phone"
+			/>
+			<button type="submit">Update</button>
+			<button onClick={handleCancel}>Cancel</button>
+		</form>
 	);
 }
 

@@ -37,8 +37,8 @@ function ContactForm({ addContact }) {
 	};
 
 	return (
-		<div>
-			<form onSubmit={handleSubmit} >
+		<div className="container">
+			<form onSubmit={handleSubmit} className="form">
 				<input
 					value={contact.name}
 					onChange={handleChange}

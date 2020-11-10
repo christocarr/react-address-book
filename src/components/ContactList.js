@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import ContactCard from './ContactCard';
 import EditContactForm from './EditContactForm'
 
-function ContactList({ contactList, showModal }) {
+function ContactList({ contactList }) {
 	return (
-		<div>
+		<div className="container contact__list">
 			{contactList.length > 0 ? (
 				contactList.map((contact, index) =>
 					contact.editing ? (

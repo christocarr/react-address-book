@@ -10,8 +10,10 @@ function App() {
 			<header>
 				<h1>Address Book</h1>
 			</header>
-		<ContactForm />
-		<ContactList />
+			<main>
+				<ContactForm />
+				<ContactList />
+			</main>
 		</div>
 	);
 }
