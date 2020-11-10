@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addContact } from '../actions';
-import styles from './contactForm.module.css';
 
 function ContactForm({ addContact }) {
 	const [contact, setNewContact] = useState({
@@ -38,8 +37,8 @@ function ContactForm({ addContact }) {
 	};
 
 	return (
-		<div className={styles.form__container}>
-			<form onSubmit={handleSubmit} className={styles.form}>
+		<div>
+			<form onSubmit={handleSubmit} >
 				<input
 					value={contact.name}
 					onChange={handleChange}

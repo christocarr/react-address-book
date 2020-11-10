@@ -1,12 +1,11 @@
 import React from 'react';
 import EditContact from './EditContact';
 import DeleteContact from './DeleteContact';
-import styles from './contactCard.module.css';
 
 //destructure props and render
 function ContactCard({ contact }) {
 	return (
-		<div className={styles.contact__card_container}>
+		<div>
 			<h3>{contact.name}</h3>
 			<address>
 				<p>
@@ -27,7 +26,7 @@ function ContactCard({ contact }) {
 				<br />
 				{contact.phone}
 			</p>
-			<div className={styles.button__container}>
+			<div>
 				<EditContact contact={contact} />
 				<DeleteContact contact={contact} />
 			</div>

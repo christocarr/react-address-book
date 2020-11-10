@@ -2,11 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ContactCard from './ContactCard';
 import EditContactForm from './EditContactForm'
-import styles from '../components/contactList.module.css';
 
 function ContactList({ contactList, showModal }) {
 	return (
-		<div className={styles.contactlist__container}>
+		<div>
 			{contactList.length > 0 ? (
 				contactList.map((contact, index) =>
 					contact.editing ? (

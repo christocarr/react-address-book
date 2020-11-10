@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateContact, toggleEditContact } from '../actions';
-import styles from './editContactForm.module.css';
 
 function EditContactForm({ contact, updateContact, toggleEditContact }) {
 	const [updatedContact, setUpdatedContact] = useState({
@@ -41,8 +40,8 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 	}
 
 	return (
-		<div className={styles.edit__form_container}>
-			<form onSubmit={handleSubmit} className={styles.form}>
+		<div>
+			<form onSubmit={handleSubmit}>
 				<input
 					value={updatedContact.name}
 					onChange={handleChange}
