@@ -99,8 +99,10 @@ function EditContactForm({ contact, updateContact, toggleEditContact }) {
 				name="phone"
 				placeholder="phone"
 			/>
-			<button type="submit">Update</button>
-			<button onClick={handleCancel}>Cancel</button>
+			<div className="form__button_block">
+				<button type="submit">Update</button>
+				<button onClick={handleCancel}>Cancel</button>
+			</div>
 		</form>
 	);
 }
