@@ -57,6 +57,11 @@ main {
 }
 
 .form input {
+	padding: 0.4em;
+	margin-bottom: 0.5em;
+}
+
+.edit__contact input {
 	padding: 0.2em;
 	margin-bottom: 0.3em;
 }
@@ -111,7 +116,12 @@ main {
 }
 
 button {
-	padding: 0.3em 0.6em;
+	padding: 0.5em 0.6em;
 	font-weight: bolder;
 	cursor: pointer;
+}
+
+button:hover,
+button:focus {
+	background: darkgray;
 }
