@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-address-book/static/css/main.57d51513.chunk.css",
+    "main.js": "/react-address-book/static/js/main.b7ada50c.chunk.js",
+    "main.js.map": "/react-address-book/static/js/main.b7ada50c.chunk.js.map",
+    "runtime-main.js": "/react-address-book/static/js/runtime-main.337830c1.js",
+    "runtime-main.js.map": "/react-address-book/static/js/runtime-main.337830c1.js.map",
+    "static/js/2.48b423fa.chunk.js": "/react-address-book/static/js/2.48b423fa.chunk.js",
+    "static/js/2.48b423fa.chunk.js.map": "/react-address-book/static/js/2.48b423fa.chunk.js.map",
+    "index.html": "/react-address-book/index.html",
+    "precache-manifest.006efb869c859dda16d8dc9e80d3f208.js": "/react-address-book/precache-manifest.006efb869c859dda16d8dc9e80d3f208.js",
+    "service-worker.js": "/react-address-book/service-worker.js",
+    "static/css/main.57d51513.chunk.css.map": "/react-address-book/static/css/main.57d51513.chunk.css.map",
+    "static/js/2.48b423fa.chunk.js.LICENSE.txt": "/react-address-book/static/js/2.48b423fa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.337830c1.js",
+    "static/js/2.48b423fa.chunk.js",
+    "static/css/main.57d51513.chunk.css",
+    "static/js/main.b7ada50c.chunk.js"
+  ]
+}
