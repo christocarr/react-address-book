@@ -6,8 +6,9 @@ React Address Book is a CRUD app that I built to teach myself Redux. Who wants t
 
 ### Tech
 
-* [React] - of course, what else?
-* [redux] - state management library
+- [React] - ui javascript library
+- [redux] - state management library
+- [tailwindcss] - CSS framework
 
 ### Installation
 
@@ -25,17 +26,15 @@ Want to contribute? Great! Drop me line an we can chat how to make this app bett
 
 ### Todos
 
-* Add Google's Places for faster address input.
+- Add Google's Places for faster address input.
 
-License
-----
+## License
 
 MIT License
 
-
 **Free Software, Hell Yeah!**
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-[React]: <https://reactjs.org/>
-[redux]: <https://redux.js.org/>
+[//]: # "These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax"
+[react]: https://reactjs.org/
+[redux]: https://redux.js.org/
+[tailwindcss]: https://tailwindcss.com/
