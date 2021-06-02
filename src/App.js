@@ -6,11 +6,11 @@ import OpenFormButton from './components/OpenFormButton';
 function App() {
   const [displayForm, setDisplayForm] = useState(false);
   return (
-    <div className="App">
-      <header>
+    <div className="container flex flex-col justify-center items-center mx-auto py-4 px-2">
+      <header className="w-full mb-4 flex justify-center">
         <h1>Address Book</h1>
       </header>
-      <main>
+      <main className="container flex flex-col justify-center items-center py-2">
         <OpenFormButton
           displayForm={displayForm}
           setDisplayForm={setDisplayForm}

@@ -6,7 +6,11 @@ function OpenFormButton({ setDisplayForm, displayForm }) {
   const handleClick = () => {
     setDisplayForm((prevState) => !prevState);
   };
-  return <button onClick={handleClick}>{buttonText}</button>;
+  return (
+    <button onClick={handleClick} className="btn mb-6 w-48">
+      {buttonText}
+    </button>
+  );
 }
 
 export default OpenFormButton;
