@@ -23,14 +23,15 @@ function ContactForm({ addContact, contactList }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     //check if there is a contact with entered email
-    const item = contactList.find((item) => item.email === contact.email);
-    //if entered email exists then return an error message
-    if (item.email === contact.email)
-      setError(
-        `A contact with the email ${item.email} is already in your contact list`
-      );
+    if (contactList.length > 0) {
+      const item = contactList.find((item) => item.email === contact.email);
+      //if entered email exists then return an error message
+      if (item.email === contact.email)
+        setError(
+          `A contact with the email ${item.email} is already in your contact list`
+        );
+    }
 
     //send contact to store
     addContact({ ...contact, date: Date.now(), editing: false });
