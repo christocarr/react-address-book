@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-address-book/static/css/main.41e470a9.chunk.css",
-    "main.js": "/react-address-book/static/js/main.13e7e1ea.chunk.js",
-    "main.js.map": "/react-address-book/static/js/main.13e7e1ea.chunk.js.map",
+    "main.js": "/react-address-book/static/js/main.70081a8b.chunk.js",
+    "main.js.map": "/react-address-book/static/js/main.70081a8b.chunk.js.map",
     "runtime-main.js": "/react-address-book/static/js/runtime-main.0831efd2.js",
     "runtime-main.js.map": "/react-address-book/static/js/runtime-main.0831efd2.js.map",
     "static/js/2.dcfcf1fb.chunk.js": "/react-address-book/static/js/2.dcfcf1fb.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.0831efd2.js",
     "static/js/2.dcfcf1fb.chunk.js",
     "static/css/main.41e470a9.chunk.css",
-    "static/js/main.13e7e1ea.chunk.js"
+    "static/js/main.70081a8b.chunk.js"
   ]
 }
