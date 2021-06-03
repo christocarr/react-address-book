@@ -5,7 +5,7 @@ import DeleteContact from './DeleteContact';
 //destructure props and render
 function ContactCard({ contact }) {
   return (
-    <div className="container flex flex-col p-4 mb-4 rounded border border-gray-300">
+    <div className="container flex flex-col max-w-xs p-4 rounded border border-gray-300">
       <h3>{contact.name}</h3>
       <address className="align-left">
         <p>

@@ -5,7 +5,7 @@ import EditContactForm from './EditContactForm';
 
 function ContactList({ contactList }) {
   return (
-    <div className="container flex flex-col justify-center items-center">
+    <div className="container flex flex-col justify-center items-center sm:flex-row gap-2">
       {contactList.length > 0 ? (
         contactList.map((contact, index) =>
           contact.editing ? (
