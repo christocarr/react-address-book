@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addContact } from '../actions';
 
-function ContactForm({ addContact }) {
+function ContactForm({ addContact, contactList }) {
   const [contact, setNewContact] = useState({
     name: '',
     firstLine: '',
@@ -14,6 +14,7 @@ function ContactForm({ addContact }) {
     phone: '',
     date: '',
   });
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,8 +23,18 @@ function ContactForm({ addContact }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    //check if there is a contact with entered email
+    const item = contactList.find((item) => item.email === contact.email);
+    //if entered email exists then return an error message
+    if (item.email === contact.email)
+      setError(
+        `A contact with the email ${item.email} is already in your contact list`
+      );
+
     //send contact to store
     addContact({ ...contact, date: Date.now(), editing: false });
+
     setNewContact({
       name: '',
       firstLine: '',
@@ -106,9 +117,16 @@ function ContactForm({ addContact }) {
         name="phone"
         placeholder="phone"
       />
+      {error && <p className="text-red-600 mb-2">{error}</p>}
       <button className="btn">Add contact</button>
     </form>
   );
 }
 
-export default connect(null, { addContact })(ContactForm);
+function mapStateToProps(state) {
+  return {
+    contactList: state.contactList,
+  };
+}
+
+export default connect(mapStateToProps, { addContact })(ContactForm);
