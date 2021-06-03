@@ -38,61 +38,71 @@ function ContactForm({ addContact }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="name">Name</label>
       <input
         value={contact.name}
         onChange={handleChange}
         type="text"
         name="name"
+        id="name"
         placeholder="name"
         required
       />
-      <input
-        value={contact.firstLine}
-        onChange={handleChange}
-        type="text"
-        name="firstLine"
-        placeholder="first line"
-      />
-      <input
-        value={contact.secondLine}
-        onChange={handleChange}
-        type="text"
-        name="secondLine"
-        placeholder="second line"
-      />
-      <input
-        value={contact.town}
-        onChange={handleChange}
-        type="text"
-        name="town"
-        placeholder="town"
-      />
-      <input
-        value={contact.county}
-        onChange={handleChange}
-        type="text"
-        name="county"
-        placeholder="county"
-      />
-      <input
-        value={contact.postcode}
-        onChange={handleChange}
-        type="text"
-        name="postcode"
-        placeholder="postcode"
-      />
+      <fieldset>
+        <legend>Address</legend>
+        <input
+          value={contact.firstLine}
+          onChange={handleChange}
+          type="text"
+          name="firstLine"
+          placeholder="first line"
+        />
+        <input
+          value={contact.secondLine}
+          onChange={handleChange}
+          type="text"
+          name="secondLine"
+          placeholder="second line"
+        />
+        <input
+          value={contact.town}
+          onChange={handleChange}
+          type="text"
+          name="town"
+          placeholder="town"
+        />
+        <input
+          value={contact.county}
+          onChange={handleChange}
+          type="text"
+          name="county"
+          placeholder="county"
+        />
+        <input
+          value={contact.postcode}
+          onChange={handleChange}
+          type="text"
+          name="postcode"
+          placeholder="postcode"
+        />
+      </fieldset>
+
+      <label htmlFor="email">Email</label>
       <input
         value={contact.email}
         onChange={handleChange}
         type="text"
+        id="email"
         name="email"
         placeholder="email"
         required
       />
+      <label htmlFor="phone">Phone number</label>
       <input
         value={contact.phone}
         onChange={handleChange}
         type="text"
+        id="phone"
         name="phone"
         placeholder="phone"
       />
